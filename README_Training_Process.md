@@ -1,8 +1,5 @@
-# Highlands-Coffee-churn-prediction
-The model aims to help Highlands Coffee effectively predict potential churns, hence better focusing resources on customers who would bring most value to the company.
-
-  
 # Training process
+This README will show my entire process of training and testing my model
 
 ## Dataset description
 The original data contains 9 tables, varying in features, such as competitors information, customer demographic, customer behavior, ...
@@ -61,9 +58,14 @@ I focused on 3 main hyper-parameters of GB, and found the following as optimal r
 
 ### Result
 
+![image](https://github.com/user-attachments/assets/2f367045-716c-4cdd-908d-73655305c8c0)
+
 # Discussions
 There are, however, some limitations to my methodology, which could be further improved in future work:
-- 
+- Choice of features: the choice of fetures was based on my understanding of customers' behaviors in FnB field, which might not be statistically thorough.
+- Choice of clustering model might not be MECE, since I only chose among 4 most well-known models. Future work could expand my list of clustering model to better segment customers.
+- Limitation of data: Since filling Null values returned unfavorable results, I had to delete many observations with important values missing. This loss of data could cause bias in the final model. Also, the data for churn was imbalanced with churn (1) being outnumbered by retained (0). This could cause model more difficulty in predicting churn.
+- Choice of validation scores: In my case, I used many scores to test model's validity and strength. However, the list might not be MECE or best practice. Therefore, future work could improve upon my work by using more robust evaluation methods.
 
 
 
