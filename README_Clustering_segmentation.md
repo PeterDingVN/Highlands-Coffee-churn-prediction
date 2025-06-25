@@ -41,3 +41,10 @@ However, since DBSCAN divided the data into 5 groups, way larger than 2 groups d
 
 ![image](https://github.com/user-attachments/assets/bb77395b-b8ad-4ed6-b47e-6e7bd7798f2a)
 
+# Discussion
+There are some limitations in my methodology that future work could improve upon:
+- Expand the choice of clustering algorithms over the 4 algorithms used.
+- Choice of features for clustering was based on my own understanding of customer behaviors and FnB success metrics, rather than on statistical method.
+- Evaluation method using Silhouette and Davis-Bourdin might not be MECE enough in evaluating model's effectiveness in clustering. Future work could rely on more metrics to better evaluate my choice of algorithm.
+- Data limitation also severly weakened the clustering model. In the future, the model could be improved as it is trained on more data.
+
