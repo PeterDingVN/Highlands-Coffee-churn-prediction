@@ -41,38 +41,3 @@ However, since DBSCAN divided the data into 5 groups, way larger than 2 groups d
 
 ![image](https://github.com/user-attachments/assets/bb77395b-b8ad-4ed6-b47e-6e7bd7798f2a)
 
-## Churn prediction
-### Algorithm selection
-Since the clustering returned 2 segments of customers, with segment 1 significantly larger than segment 0 in number of observations, I used Stratified K-Fold to conduct cross-validation. This helped preserved the ratio in each folds, testing accuracy of model using different algorithms more precisely.
-
-![image](https://github.com/user-attachments/assets/f42dda0c-ce7e-4927-a324-cdeffbfe6b74)
-
-The result showed that Gradient Boosting could best balance between Recall and Precision, with highest accuracy. At the same time, I baselined the model using GB by guessing all 0 (no churn), which returned accuracy of only 76%, way lower than GB's accuracy at 86%.
-Therefore, I chose this algorithm for its reliability.
-
-### Hyper-param fine-tuning
-Using GridSearchCV, I focused on 3 main hyper-parameters of GB, and found the following as optimal result:
-- n-estimator: 300
-- learning_rate = 0.15
-- max-depth = 3
-
-### Result
-
-![image](https://github.com/user-attachments/assets/2f367045-716c-4cdd-908d-73655305c8c0)
-
-# Discussions
-There are, however, some limitations to my methodology, which could be further improved in future work:
-- Choice of features: the choice of fetures was based on my understanding of customers' behaviors in FnB field, which might not be statistically thorough.
-- Choice of clustering model might not be MECE, since I only chose among 4 most well-known models. Future work could expand my list of clustering model to better segment customers.
-- Limitation of data: Since filling Null values returned unfavorable results, I had to delete many observations with important values missing. This loss of data could cause bias in the final model. Also, the data for churn was imbalanced with churn (1) being outnumbered by retained (0). This could cause model more difficulty in predicting churn.
-- Choice of validation scores: In my case, I used many scores to test model's validity and strength. However, the list might not be MECE or best practice. Therefore, future work could improve upon my work by using more robust evaluation methods.
-
-
-
-
-
-
-
-
-
-
