@@ -51,7 +51,7 @@ The result showed that Gradient Boosting could best balance between Recall and P
 Therefore, I chose this algorithm for its reliability.
 
 ### Hyper-param fine-tuning
-I focused on 3 main hyper-parameters of GB, and found the following as optimal result:
+Using GridSearchCV, I focused on 3 main hyper-parameters of GB, and found the following as optimal result:
 - n-estimator: 300
 - learning_rate = 0.15
 - max-depth = 3
